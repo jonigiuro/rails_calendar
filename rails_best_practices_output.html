@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Output of rails_best_practices</title>
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          color: #333;
+          background: #eee;
+          padding: 0 20px;
+        }
+        h1 {
+          color: ##4E4E4E;
+        }
+        table {
+          background: white;
+          border: 1px solid #666;
+          border-collapse: collapse;
+          margin: 20px 0;
+          font-size: 14px;
+        }
+        table th, table td {
+          padding: 4px;
+          border: 1px solid #D0D0D0;
+        }
+        table th {
+          background-color: #DFC;
+          color: #337022;
+        }
+        table td.filename {
+          color: #ED1556;
+        }
+        table tr:hover {
+          background-color: #FFFFC0;
+        }
+      /*]]>*/
+    </style>
+  </head>
+  <body>
+    <h1>rails_best_practices output</h1>
+    <h2>
+      Please go to
+      <a href='http://rails-bestpractices.com' target='_blank'>http://rails-bestpractices.com</a>
+      to see more useful Rails Best Practices.
+    </h2>
+    <h2>
+      Found 21 errors.
+    </h2>
+    <table>
+      <tr>
+        <th>Filename</th>
+        <th>Line Number</th>
+        <th>Warning Message</th>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/2-use-model-association' target='_blank'>use model association (for @event)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/2-use-model-association' target='_blank'>use model association (for @event)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/events/day.html.erb
+        </td>
+        <td class='line-number'>7</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/24-move-code-into-controller' target='_blank'>move code into controller</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/attends_controller.rb
+        </td>
+        <td class='line-number'>3</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@attend use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/calendar_controller.rb
+        </td>
+        <td class='line-number'>3</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model ( use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/comments_controller.rb
+        </td>
+        <td class='line-number'>3</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@comment use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model ( use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@event use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>50</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model ( use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>50</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (event use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/events_controller.rb
+        </td>
+        <td class='line-number'>50</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (Event use_count > 4)</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>22</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (comments => [author_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>22</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (comments => [event_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>30</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (events => [user_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>15</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (attends => [user_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>15</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (attends => [event_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/calendar/_event_form.html.erb
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/calendar/index.html.erb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/devise/registrations/new.html.erb
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/events/day.html.erb
+        </td>
+        <td class='line-number'>7</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/events/show.html.erb
+        </td>
+        <td class='line-number'>3</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

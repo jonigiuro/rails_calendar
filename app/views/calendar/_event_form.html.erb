@@ -1,0 +1,13 @@
+<div id = "event_form">
+	<div id = "event_form_title">new event</div>
+	<div id = "event_form_content">
+		<%= form_for ([current_user, @event]) do |f| %>
+			<div id="event_name">title</div><%= f.text_field :name %> <span class="small_text">whole day? </span><%= f.check_box :one %>
+			<div id="event_start">start at</div><span class="small_text"><%= f.datetime_select :start_at %></span>
+			<div id="event_end">end at</div><span class="small_text"><%= f.datetime_select :end_at %></span><br />
+			<div id="event_body">description</div><span class="small_text"><%= f.text_area :body, :size  => '42x5' %></span><br />
+			<%= f.submit :submit %><br />
+		<% end %>
+	</div>
+	<p id="notice"><%= notice %></p>
+</div>

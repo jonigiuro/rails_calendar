@@ -1,0 +1,99 @@
+<div id="event_details_cont">
+<div id="gravatar_big"><%= image_tag avatar_url(User.find(@event.user_id)) %></div>
+	<h1><%= (@event.name).capitalize %><br />
+				<% if user_signed_in? %>
+						<% if @event.user_id == current_user.id %>
+							by <strong>You</strong></h1>
+						<% else %>
+							by <%= User.find(@event.user_id).username %></h1>
+						<% end %>
+					<% else %>
+						by <%= User.find(@event.user_id).username %></h1>
+			<% end %>
+				people |<% @event.attend_list.each do |attendant| %>
+				<% if user_signed_in? %>
+					<% if attendant == current_user.id %>
+						| <strong>You</strong>
+					<% else %>
+						| <%= User.find(attendant).username %>
+					<% end %>
+				<% else %>
+					| <%= User.find(attendant).username %>
+				<% end %>
+				
+			<% end %>
+			<% if user_signed_in? %><br /><br />
+				<% if (Attend.where('user_id'  => current_user.id) & Attend.where('event_id'  =>  @event.id)).count == 0 %>
+					<%= form_for [(Attend.new)] do |t| %>
+			  		<div class="field">
+			    		<%= t.hidden_field :user_id, :value  => current_user.id %>
+							<%= t.hidden_field :event_id, :value  => @event.id %>
+			  		</div>
+			  		<div class="actions">
+			    		<%= t.submit "Attend" %>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+	<h3>From <%= (@event.start_at).to_formatted_s(:long) %> to <%= (@event.end_at).to_formatted_s(:long) %>
+		(duration: <%= distance_of_time_in_words((@event.end_at) - (@event.start_at)) %>)</h3>
+	<div id="desc"><div id="desc_title">description:</div>
+	<div id="desc_body"><%= @event.body %></div>
+	</div>
+	<br /><hr />
+	<div id = "event_form"><%= pluralize(Comment.where(:event_id  => @event.id).count, 'comment') %></div>
+	<% Comment.where(:event_id  => @event.id).each do |comment| %>
+		<% if user_signed_in? %>
+			<% if comment.author_id == current_user.id %>
+				<div class="comment_title">You said:</div>
+			
+		<% else %>
+			<div class="comment_title"><%= User.find(comment.author_id).username %> said:</div>
+		<% end %>
+		<% else %>
+		<div class="comment_title"><%= User.find(comment.author_id).username %> said:</div>
+		<% end %>
+		<div class = "comment_form_content">
+			<div class="gravatar_small"><%= image_tag avatar_url(User.find(comment.author_id)) %></div>
+		<%= comment.body %>
+		<% if user_signed_in? %>
+			<% if comment.author_id == current_user.id %>
+				<hr />
+				<p style="text-align:right; margin:0"><%= link_to "Remove comment", comment, :method => :delete, :confirm => "Are you sure?" %></p>
+				<% end %>
+			<% end %>
+		</div>
+	<% end %>
+
+<br /><br />
+<% if user_signed_in? %>
+	<div id = "event_form">
+		<div id="event_form_title">comment</div>
+			<div id ="comment_form_content">
+			<%= form_for (Comment.new) do |t| %>
+	  	<div class="field">
+	    	<%= t.hidden_field :author_id, :value  => current_user.id %>
+				<%= t.hidden_field :event_id, :value  => @event.id %>
+	  	</div>
+	  <div class="field">
+	    <%= t.text_area :body, :size  => '42x5' %>
+	  </div>
+
+	  <div class="actions">
+	    <%= t.submit %>
+	  </div>
+	<% end %>
+	</div>
+	</div>
+	
+<% end %>
+<div id ="nav">
+<% if user_signed_in? %>
+	<% if current_user.id == User.find(@event.user_id).id %>
+		<%= link_to 'Remove Event |', @event_path, :method => :delete, :confirm => "Are you sure?" %>
+	<% end %>
+<% end %>
+<%# link_to 'Back', request.env["HTTP_REFERER"] %>
+<%= link_to 'Back', root_path %> <%# ################# FIX THIS ##################%>
+<br />
+</div>

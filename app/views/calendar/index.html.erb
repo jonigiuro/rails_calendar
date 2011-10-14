@@ -1,0 +1,18 @@
+	<div id ="calendar_cont">
+		<%= raw(event_calendar) %>
+	</div>
+	<% if user_signed_in? %>
+		<%= render 'event_form' %>
+	<% end %>
+	
+	<div id ="nav">
+			<%= link_to 'Yesterday', day_nav (-1) %><br />
+	<%= link_to "Today", day_nav (0) %><br />
+		<%= link_to 'Tomorrow', day_nav (1) %><br/><br />
+
+	<em>Oncoming events:</em><br />
+	<% @todays.each do |tod_event| %>
+		<%= link_to tod_event.name, "/events/#{tod_event.id}" %><br />
+	<% end %>
+	
+</div>

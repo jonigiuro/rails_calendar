@@ -1,0 +1,21 @@
+<div id="day_date"><%= link_to '<', day_nav(-1) %> <%= (@date.to_date).to_formatted_s(:long_ordinal) %> <%= link_to '>', day_nav(1) %></div>
+<div id="ruler" style="left:<%= line_control %>px">&nbsp<%= ((DateTime.now.hour).to_s).rjust(2, '0') %>:<%= ((DateTime.now.min).to_s).rjust(2, '0') %></div>
+<div id="day_view">
+
+<% loopnumber = 0 %>
+	<% if @events %>
+	<% @events.each do |event| %>
+		<div class="single_event" style="width:<%= event_length(event, @date) %>px; left:<%= starting_pos(event, @date)%>px; top:<%= (10*loopnumber) + 30 %>px; background-color:#<%= user_color(event.user_id) %>"><strong><%= link_to event.name, "/events/#{event.id}" %></strong> - by <%= User.find(event.user_id).username %><br /><%= show_start_date(event) %> - <%= show_end_date(event) %> - <%= event.people %>
+			<div class="ongoing" style="width:<%# ongoing_bar(event, @date) %>px"></div></div>
+		<% loopnumber += 1 %>
+	<% end %>
+	</div>
+<% else %>
+<div id="no_events">
+	There's no events at all so far..
+</div>
+<% end %>
+
+<div id="nav"><%= link_to 'Month view', root_path %>
+	
+</div>
