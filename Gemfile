@@ -5,8 +5,9 @@ gem 'rake', '0.9.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
+group :development, :test do
+	gem 'sqlite3'
+end
 gem 'event-calendar', :require => 'event_calendar'
 gem 'devise', '1.1.rc0'
 
