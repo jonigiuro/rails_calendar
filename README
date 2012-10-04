@@ -3,3 +3,7 @@ It manages users login and events with attendance.
 
 Please note: This is purely a backend exercice, so I did not spend any time on styles or usability so far (I might do that in the future..)
 If you get a rake error be sure to use "bundle exec rake db:migrate" instead of "rake db:migrate"
+
+it allows direct day navigation through the url (/2012/10/23 brings you to the day view for the  23th october 2012) 
+
+demo over at: http://railscalendar.herokuapp.com/
