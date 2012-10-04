@@ -1,9 +1,5 @@
-A Ruby on Rails done by a noob..
-I did this as one of my first exercices in Rails so there's some dirty code. If I had to do it now I would do it differently.
-Anyway...
-I used gravatar and devise and calendar-event gems.
+Ruby on Rails Calendar
+It manages users login and events with attendance.
 
-event-calendar provided the month view, and I wrote my own day view, finding a hard time in creating the +1 day and -1 day links because of all the different 31/30/29/28 days and that stupid 4 year february..
-Probably Rails has it's own way of doing this but I tried to code it on my own..
-
-Users can set their presence to events and comment on those. Only the creator of a given event or comment can destroy it. Users can pick a color that will be used to display their events.
+Please note: This is purely a backend exercice, so I did not spend any time on styles or usability so far (I might do that in the future..)
+If you get a rake error be sure to use "bundle exec rake db:migrate" instead of "rake db:migrate"

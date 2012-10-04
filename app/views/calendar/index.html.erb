@@ -6,9 +6,9 @@
 	<% end %>
 	
 	<div id ="nav">
-			<%= link_to 'Yesterday', day_nav (-1) %><br />
-	<%= link_to "Today", day_nav (0) %><br />
-		<%= link_to 'Tomorrow', day_nav (1) %><br/><br />
+			<%= link_to 'Go to next day', day_nav(-1) %><br />
+	<%= link_to "View today's events", day_nav(0) %><br />
+		<%= link_to 'Go to previous day', day_nav(1) %><br/><br />
 
 	<em>Oncoming events:</em><br />
 	<% @todays.each do |tod_event| %>

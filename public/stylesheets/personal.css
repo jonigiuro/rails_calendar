@@ -174,20 +174,13 @@ h1{
 }
 
 #nav{
-	margin-top:200px;
 	padding:10px;
-	width:300px;
 	z-index:100;
-	position:fixed;
-	top:10px;
-	left:0;
 	font-weight:bold;
 	font-size:20px;
 	color:#000;
-	text-align:right;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	float:left;
+
 }
 
 #nav a{
